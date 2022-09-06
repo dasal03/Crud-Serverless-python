@@ -1,0 +1,18 @@
+org: dsaltarin
+app: serverapp
+service: serverapp
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.8
+
+functions:
+  productos:
+    handler: handler.handler
+    events:
+      - httpApi:
+          path: /
+          method: post
+plugins:
+  - serverless-offline

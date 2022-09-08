@@ -14,7 +14,7 @@ class Pedidos(Base):
   direccion = Column(String)
   ciudad = Column(String)
   telefono = Column(String)
-  estado = Column(String)
+  id_estado = Column(String)
 
   def __init__(self, 
           nombre, 
@@ -25,7 +25,7 @@ class Pedidos(Base):
           direccion, 
           ciudad, 
           telefono, 
-          estado) -> None:
+          id_estado) -> None:
 
       self.nombre = nombre
       self.fecha = fecha
@@ -35,20 +35,20 @@ class Pedidos(Base):
       self.direccion = direccion
       self.ciudad = ciudad
       self.telefono = telefono
-      self.estado = estado
+      self.id_estado = id_estado
 
   def __repr__(self) -> str:
 
     cliente = {
       'nombre': self.nombre,
-      'fecha': self.fecha,
+      'fecha': self.fecha.strftime('%Y-%m-%d %H:%M:%S'),
       'id_producto': self.id_producto,
       'cantidad': self.cantidad,
       'valor_total': self.valor_total,
       'direccion': self.direccion,
       'ciudad': self.ciudad,
       'telefono': self.telefono,
-      'estado': self.estado
+      'id_estado': self.id_estado
     }
 
     return json.dumps(cliente)

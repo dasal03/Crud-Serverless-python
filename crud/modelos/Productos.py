@@ -1,6 +1,6 @@
 import json
 from db import *
-from sqlalchemy import Column, Integer, Date, String, ForeignKey, Float
+from sqlalchemy import Column, Integer, String, Float
 
 class Producto(Base):
   __tablename__ = 'producto'

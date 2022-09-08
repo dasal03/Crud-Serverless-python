@@ -1,6 +1,7 @@
 import json
 from pedidos import pedidos
-from productos import productos
+from crud.productos import productos
+from estado import estado
 
 def handler(event, context):
     body = json.loads(event["body"])
@@ -10,6 +11,8 @@ def handler(event, context):
         accion = pedidos(event=event, context=context)
     elif(modulo=="productos"):
         accion = productos(event=event, context=context)
+    elif(modulo=="estado"):
+        accion = estado(event=event, context=context)
     else:
         return "Módulo inválido"
     

@@ -38,7 +38,8 @@ class pedido_class():
     pedidos = []
 
     for p in pedido:
-      pedidos.append({'nombre': p.Pedidos.nombre,
+      pedidos.append({
+      'nombre': p.Pedidos.nombre,
       'fecha': p.Pedidos.fecha.strftime('%Y-%m-%d %H:%M:%S'),
       'cantidad': p.Pedidos.cantidad,
       'valor_total': p.Pedidos.valor_total,

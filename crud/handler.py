@@ -1,6 +1,6 @@
 import json
 from pedidos import pedidos
-from crud.productos import productos
+from productos import productos
 from estado import estado
 
 def handler(event, context):

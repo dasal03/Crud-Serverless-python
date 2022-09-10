@@ -2,19 +2,20 @@ import json
 from db import *
 from sqlalchemy import Column, Integer, String
 
+
 class Estado(Base):
-  __tablename__ = 'estado'
+    __tablename__ = 'estado'
 
-  id = Column(Integer, primary_key=True)
-  estado = Column(String)
+    id = Column(Integer, primary_key=True)
+    estado = Column(String)
 
-  def __init__(self, estado):
-    self.estado = estado
+    def __init__(self, estado):
+        self.estado = estado
 
-  def __repr__(self) -> str:
+    def __repr__(self) -> str:
 
-    status = {
-      'estado': self.estado
-    }
+        status = {
+            'estado': self.estado
+        }
 
-    return json.dumps(status)
+        return json.dumps(status)

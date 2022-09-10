@@ -6,7 +6,7 @@
     },
     "provider": {
       "name": "aws",
-      "runtime": "python3.8",
+      "runtime": "python3.9",
       "stage": "dev",
       "region": "us-east-1",
       "versionFunctions": true,
@@ -219,10 +219,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverapp/dev/1662557815408-2022-09-07T13:36:55.408Z/serverapp.zip"
+                "S3Key": "serverless/serverapp/dev/1662826754892-2022-09-10T16:19:14.892Z/serverapp.zip"
               },
               "Handler": "s_productos.handler",
-              "Runtime": "python3.8",
+              "Runtime": "python3.9",
               "FunctionName": "serverapp-dev-productos",
               "MemorySize": 1024,
               "Timeout": 6,
@@ -231,20 +231,23 @@
                   "IamRoleLambdaExecution",
                   "Arn"
                 ]
-              }
+              },
+              "Layers": [
+                "arn:aws:lambda:us-east-1:011725170319:layer:sqlalchemy:2"
+              ]
             },
             "DependsOn": [
               "ProductosLogGroup"
             ]
           },
-          "ProductosLambdaVersionKevA9uUgFwTYSCoUPLO0U0Ensz65Ujl3EtGEm8ijE": {
+          "ProductosLambdaVersiondyjua7Thy5W5hbFiuXmh5kRdhqevpG2XS4QNfYIv0o": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ProductosLambdaFunction"
               },
-              "CodeSha256": "Bc0AUAaVNILq2t3ubmSZ2uUd0vaffKitAwgh8ztz1tg="
+              "CodeSha256": "4JhJAFIjjar70i6mwftGbfkgpp6ehXpNNCvkbazH6qg="
             }
           },
           "HttpApi": {
@@ -354,6 +357,27 @@
             },
             "DependsOn": "HttpApiIntegrationProductos"
           },
+          "HttpApiRouteGet": {
+            "Type": "AWS::ApiGatewayV2::Route",
+            "Properties": {
+              "ApiId": {
+                "Ref": "HttpApi"
+              },
+              "RouteKey": "GET /",
+              "Target": {
+                "Fn::Join": [
+                  "/",
+                  [
+                    "integrations",
+                    {
+                      "Ref": "HttpApiIntegrationProductos"
+                    }
+                  ]
+                ]
+              }
+            },
+            "DependsOn": "HttpApiIntegrationProductos"
+          },
           "CWLSubFilterProductosLogGroupUsEast1": {
             "Type": "AWS::Logs::SubscriptionFilter",
             "Properties": {
@@ -398,7 +422,7 @@
           "ProductosLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ProductosLambdaVersionKevA9uUgFwTYSCoUPLO0U0Ensz65Ujl3EtGEm8ijE"
+              "Ref": "ProductosLambdaVersiondyjua7Thy5W5hbFiuXmh5kRdhqevpG2XS4QNfYIv0o"
             },
             "Export": {
               "Name": "sls-serverapp-dev-ProductosLambdaFunctionQualifiedArn"
@@ -529,9 +553,6 @@
       },
       "vpc": {}
     },
-    "plugins": [
-      "serverless-offline"
-    ],
     "pluginsData": {},
     "functions": {
       "productos": {
@@ -544,15 +565,26 @@
             },
             "resolvedMethod": "POST",
             "resolvedPath": "/"
+          },
+          {
+            "httpApi": {
+              "path": "/",
+              "method": "get"
+            },
+            "resolvedMethod": "GET",
+            "resolvedPath": "/"
           }
         ],
+        "layers": {
+          "$ref": "$[\"service\"][\"provider\"][\"compiledCloudFormationTemplate\"][\"Resources\"][\"ProductosLambdaFunction\"][\"Properties\"][\"Layers\"]"
+        },
         "name": "serverapp-dev-productos",
         "package": {},
         "memory": 1024,
         "timeout": 6,
-        "runtime": "python3.8",
+        "runtime": "python3.9",
         "vpc": {},
-        "versionLogicalId": "ProductosLambdaVersionKevA9uUgFwTYSCoUPLO0U0Ensz65Ujl3EtGEm8ijE"
+        "versionLogicalId": "ProductosLambdaVersiondyjua7Thy5W5hbFiuXmh5kRdhqevpG2XS4QNfYIv0o"
       }
     },
     "configValidationMode": "warn",
@@ -567,9 +599,6 @@
       },
       "functions": {
         "$ref": "$[\"service\"][\"functions\"]"
-      },
-      "plugins": {
-        "$ref": "$[\"service\"][\"plugins\"]"
       }
     },
     "app": "serverapp",
@@ -579,10 +608,10 @@
     "isDashboardAppPreconfigured": true,
     "orgUid": "aba0ecd9-d5e7-4785-8783-e5a929bc3654",
     "appUid": "RRXnmKx1rQlXf5jSl6",
-    "artifact": "C:\\Users\\RED5G\\Documents\\serverlessapp\\.serverless\\serverapp.zip"
+    "artifact": "C:\\Users\\RED5G\\Documents\\serverlessapp\\Crud-Serverless-python\\crud\\.serverless\\serverapp.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/serverapp/dev/1662557815408-2022-09-07T13:36:55.408Z",
+    "artifactDirectoryName": "serverless/serverapp/dev/1662826754892-2022-09-10T16:19:14.892Z",
     "artifact": "serverapp.zip"
   }
 }

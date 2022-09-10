@@ -2,26 +2,27 @@ import json
 from db import *
 from sqlalchemy import Column, Integer, String, Float
 
+
 class Producto(Base):
-  __tablename__ = 'producto'
+    __tablename__ = 'producto'
 
-  id = Column(Integer, primary_key=True)
-  producto = Column(String)
-  valor = Column(Float)
+    id = Column(Integer, primary_key=True)
+    producto = Column(String)
+    valor = Column(Float)
 
-  def __init__(self, 
-          producto, 
-          valor) -> None:
+    def __init__(self,
+                 producto,
+                 valor) -> None:
 
-    self.producto = producto
-    self.valor = valor
+        self.producto = producto
+        self.valor = valor
 
-  def __repr__(self) -> str:
+    def __repr__(self) -> str:
 
-    prod = {
-      "id": self.id,
-      "producto": self.producto,
-      "valor": self.valor
-    }
+        prod = {
+            "id": self.id,
+            "producto": self.producto,
+            "valor": self.valor
+        }
 
-    return json.dumps(prod)
+        return json.dumps(prod)

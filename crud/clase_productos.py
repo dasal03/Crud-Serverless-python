@@ -1,27 +1,28 @@
 from modelos.Productos import Producto
 from db import session
 
+
 class producto_class():
 
-  def crear_productos(self, producto, valor):
-    try:
+    def crear_productos(self, producto, valor):
+        try:
 
-      self.session = session
-      
-      self.producto = Producto(producto, valor)
-      self.session.add(self.producto)
-      self.session.commit()
-      self.session.close()
-      return True
+            self.session = session
 
-    except Exception as e:
-      print(e)
-      return e
+            self.producto = Producto(producto, valor)
+            self.session.add(self.producto)
+            self.session.commit()
+            self.session.close()
+            return True
 
-  def obtener_productos(self, id):
-    producto = session.query(Producto).all()
+        except Exception as e:
+            print(e)
+            return e
 
-    return producto
+    def obtener_productos(self, id):
+        producto = session.query(Producto).all()
 
-  def actualizar_productos(self, id):
-    producto = session.query(Producto).all()
+        return producto
+
+    def actualizar_productos(self, id):
+        producto = session.query(Producto).all()

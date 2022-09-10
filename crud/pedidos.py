@@ -2,6 +2,7 @@ import json
 from clase_pedidos import pedido_class
 from datetime import datetime
 
+
 def pedidos(event, context):
     body = json.loads(event["body"])
 
@@ -16,8 +17,8 @@ def pedidos(event, context):
     id_estado = body["id_estado"]
 
     ped = pedido_class()
-
-    agregar = ped.crear_pedidos(nombre, fecha, id_producto, cantidad, valor_total, direccion, ciudad, telefono, id_estado)
+    ped.crear_pedidos(nombre, fecha, id_producto, cantidad,
+                                valor_total, direccion, ciudad, telefono, id_estado)
 
     body = {
         "pedido": ped.obtener_pedidos()

@@ -207,10 +207,10 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverapp/dev/1662557815408-2022-09-07T13:36:55.408Z/serverapp.zip"
+          "S3Key": "serverless/serverapp/dev/1662826754892-2022-09-10T16:19:14.892Z/serverapp.zip"
         },
         "Handler": "s_productos.handler",
-        "Runtime": "python3.8",
+        "Runtime": "python3.9",
         "FunctionName": "serverapp-dev-productos",
         "MemorySize": 1024,
         "Timeout": 6,
@@ -219,20 +219,23 @@
             "IamRoleLambdaExecution",
             "Arn"
           ]
-        }
+        },
+        "Layers": [
+          "arn:aws:lambda:us-east-1:011725170319:layer:sqlalchemy:2"
+        ]
       },
       "DependsOn": [
         "ProductosLogGroup"
       ]
     },
-    "ProductosLambdaVersionKevA9uUgFwTYSCoUPLO0U0Ensz65Ujl3EtGEm8ijE": {
+    "ProductosLambdaVersiondyjua7Thy5W5hbFiuXmh5kRdhqevpG2XS4QNfYIv0o": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ProductosLambdaFunction"
         },
-        "CodeSha256": "Bc0AUAaVNILq2t3ubmSZ2uUd0vaffKitAwgh8ztz1tg="
+        "CodeSha256": "4JhJAFIjjar70i6mwftGbfkgpp6ehXpNNCvkbazH6qg="
       }
     },
     "HttpApi": {
@@ -345,6 +348,27 @@
       },
       "DependsOn": "HttpApiIntegrationProductos"
     },
+    "HttpApiRouteGet": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "RouteKey": "GET /",
+        "Target": {
+          "Fn::Join": [
+            "/",
+            [
+              "integrations",
+              {
+                "Ref": "HttpApiIntegrationProductos"
+              }
+            ]
+          ]
+        }
+      },
+      "DependsOn": "HttpApiIntegrationProductos"
+    },
     "CWLSubFilterProductosLogGroupUsEast1": {
       "Type": "AWS::Logs::SubscriptionFilter",
       "Properties": {
@@ -389,7 +413,7 @@
     "ProductosLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ProductosLambdaVersionKevA9uUgFwTYSCoUPLO0U0Ensz65Ujl3EtGEm8ijE"
+        "Ref": "ProductosLambdaVersiondyjua7Thy5W5hbFiuXmh5kRdhqevpG2XS4QNfYIv0o"
       },
       "Export": {
         "Name": "sls-serverapp-dev-ProductosLambdaFunctionQualifiedArn"

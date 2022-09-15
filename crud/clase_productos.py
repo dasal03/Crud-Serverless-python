@@ -23,6 +23,3 @@ class producto_class():
         producto = session.query(Producto).all()
 
         return producto
-
-    def actualizar_productos(self, id):
-        producto = session.query(Producto).all()

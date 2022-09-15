@@ -9,13 +9,15 @@ def handler(event, context):
 
     modulo = body["modulo"]
     if (modulo == "pedidos"):
-        accion = pedidos(event=event, context=context)
+        accion = pedidos(body)
     elif (modulo == "productos"):
-        accion = productos(event=event, context=context)
+        accion = productos(body)
     elif (modulo == "estado"):
-        accion = estado(event=event, context=context)
+        accion = estado(body)
     else:
-        return "Módulo inválido"
+        accion = {
+            "error": "Módulo inválido"
+        }
 
     body = {
         "respuesta": accion
@@ -26,6 +28,6 @@ def handler(event, context):
                 'Access-Control-Allow-Methods': 'OPTIONS,POST,GET',
                 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
                 'Content-Type': 'application/json'
-            }, "body": json.dumps(body, default=str)}
+                }, "body": json.dumps(body)}
 
     return response

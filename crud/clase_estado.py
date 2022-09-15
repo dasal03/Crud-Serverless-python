@@ -22,6 +22,4 @@ class estado_class():
 
     def get_estado(self):
         session.query(Estado).all()
-
-    def actualizar_estado(self):
-        session.query(Estado).all()
+        

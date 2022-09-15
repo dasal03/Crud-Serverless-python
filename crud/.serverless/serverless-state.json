@@ -222,7 +222,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverapp/dev/1663009245739-2022-09-12T19:00:45.739Z/serverapp.zip"
+                "S3Key": "serverless/serverapp/dev/1663196185948-2022-09-14T22:56:25.948Z/serverapp.zip"
               },
               "Handler": "s_productos.handler",
               "Runtime": "python3.9",
@@ -243,14 +243,14 @@
               "ProductosLogGroup"
             ]
           },
-          "ProductosLambdaVersionz9YwSSfXS70FsQfnaOeuhlXvrDKFSUzgu0UPPKDLxI": {
+          "ProductosLambdaVersionRAH2hentoROL6gun9pc2wryvoesqhgXIPIskCHd2O4": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ProductosLambdaFunction"
               },
-              "CodeSha256": "Mo+4p+ITK0jear+LxPQDHH4demc62ETJjtjBEhlRSRs="
+              "CodeSha256": "w9KxVIyZg/xNbPx0WRm9gES1ZmT/gLrKESSxcgqOEIA="
             }
           },
           "HttpApi": {
@@ -444,7 +444,7 @@
           "ProductosLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ProductosLambdaVersionz9YwSSfXS70FsQfnaOeuhlXvrDKFSUzgu0UPPKDLxI"
+              "Ref": "ProductosLambdaVersionRAH2hentoROL6gun9pc2wryvoesqhgXIPIskCHd2O4"
             },
             "Export": {
               "Name": "sls-serverapp-dev-ProductosLambdaFunctionQualifiedArn"
@@ -606,7 +606,7 @@
         "timeout": 6,
         "runtime": "python3.9",
         "vpc": {},
-        "versionLogicalId": "ProductosLambdaVersionz9YwSSfXS70FsQfnaOeuhlXvrDKFSUzgu0UPPKDLxI"
+        "versionLogicalId": "ProductosLambdaVersionRAH2hentoROL6gun9pc2wryvoesqhgXIPIskCHd2O4"
       }
     },
     "configValidationMode": "warn",
@@ -633,7 +633,7 @@
     "artifact": "C:\\Users\\RED5G\\Documents\\serverlessapp\\Crud-Serverless-python\\crud\\.serverless\\serverapp.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/serverapp/dev/1663009245739-2022-09-12T19:00:45.739Z",
+    "artifactDirectoryName": "serverless/serverapp/dev/1663196185948-2022-09-14T22:56:25.948Z",
     "artifact": "serverapp.zip"
   }
 }

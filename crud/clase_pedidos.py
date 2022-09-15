@@ -31,8 +31,8 @@ class pedido_class():
         session.add(pedido)
         session.commit()
         session.close()
-        print("paso de crear")
-        return True
+        
+        return pedido
 
     except Exception as e:
         print(e)
@@ -64,8 +64,3 @@ class pedido_class():
         })
 
     return pedidos
-
-  def actualizar_pedidos(self, id_producto):
-      pedido = self.session.query(Pedidos).all()
-
-      return pedido

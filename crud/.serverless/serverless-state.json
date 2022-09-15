@@ -7,6 +7,9 @@
     "provider": {
       "name": "aws",
       "runtime": "python3.9",
+      "httpApi": {
+        "cors": true
+      },
       "stage": "dev",
       "region": "us-east-1",
       "versionFunctions": true,
@@ -219,7 +222,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverapp/dev/1662826754892-2022-09-10T16:19:14.892Z/serverapp.zip"
+                "S3Key": "serverless/serverapp/dev/1663009245739-2022-09-12T19:00:45.739Z/serverapp.zip"
               },
               "Handler": "s_productos.handler",
               "Runtime": "python3.9",
@@ -233,28 +236,47 @@
                 ]
               },
               "Layers": [
-                "arn:aws:lambda:us-east-1:011725170319:layer:sqlalchemy:2"
+                "arn:aws:lambda:us-east-1:011725170319:layer:sqlalchemy:4"
               ]
             },
             "DependsOn": [
               "ProductosLogGroup"
             ]
           },
-          "ProductosLambdaVersiondyjua7Thy5W5hbFiuXmh5kRdhqevpG2XS4QNfYIv0o": {
+          "ProductosLambdaVersionz9YwSSfXS70FsQfnaOeuhlXvrDKFSUzgu0UPPKDLxI": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ProductosLambdaFunction"
               },
-              "CodeSha256": "4JhJAFIjjar70i6mwftGbfkgpp6ehXpNNCvkbazH6qg="
+              "CodeSha256": "Mo+4p+ITK0jear+LxPQDHH4demc62ETJjtjBEhlRSRs="
             }
           },
           "HttpApi": {
             "Type": "AWS::ApiGatewayV2::Api",
             "Properties": {
               "Name": "dev-serverapp",
-              "ProtocolType": "HTTP"
+              "ProtocolType": "HTTP",
+              "CorsConfiguration": {
+                "AllowHeaders": [
+                  "Content-Type",
+                  "X-Amz-Date",
+                  "Authorization",
+                  "X-Api-Key",
+                  "X-Amz-Security-Token",
+                  "X-Amz-User-Agent",
+                  "X-Amzn-Trace-Id"
+                ],
+                "AllowMethods": [
+                  "OPTIONS",
+                  "POST",
+                  "GET"
+                ],
+                "AllowOrigins": [
+                  "*"
+                ]
+              }
             }
           },
           "HttpApiLogGroup": {
@@ -422,7 +444,7 @@
           "ProductosLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ProductosLambdaVersiondyjua7Thy5W5hbFiuXmh5kRdhqevpG2XS4QNfYIv0o"
+              "Ref": "ProductosLambdaVersionz9YwSSfXS70FsQfnaOeuhlXvrDKFSUzgu0UPPKDLxI"
             },
             "Export": {
               "Name": "sls-serverapp-dev-ProductosLambdaFunctionQualifiedArn"
@@ -584,7 +606,7 @@
         "timeout": 6,
         "runtime": "python3.9",
         "vpc": {},
-        "versionLogicalId": "ProductosLambdaVersiondyjua7Thy5W5hbFiuXmh5kRdhqevpG2XS4QNfYIv0o"
+        "versionLogicalId": "ProductosLambdaVersionz9YwSSfXS70FsQfnaOeuhlXvrDKFSUzgu0UPPKDLxI"
       }
     },
     "configValidationMode": "warn",
@@ -611,7 +633,7 @@
     "artifact": "C:\\Users\\RED5G\\Documents\\serverlessapp\\Crud-Serverless-python\\crud\\.serverless\\serverapp.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/serverapp/dev/1662826754892-2022-09-10T16:19:14.892Z",
+    "artifactDirectoryName": "serverless/serverapp/dev/1663009245739-2022-09-12T19:00:45.739Z",
     "artifact": "serverapp.zip"
   }
 }

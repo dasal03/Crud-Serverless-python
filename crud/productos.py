@@ -12,8 +12,5 @@ def productos(body):
     agregar = prodos.crear_productos(producto, valor)
     print(agregar)
 
-    body = {
-        "producto": body
-    }
 
-    return body
+    return agregar

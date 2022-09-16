@@ -9,9 +9,6 @@ def estado(body):
     stat = estado_class()
 
     stat.crear_estado(estado)
+    
 
-    body = {
-        "estado": estado
-    }
-
-    return body
+    return stat

@@ -1,4 +1,3 @@
-import json
 from clase_pedidos import pedido_class
 from datetime import datetime
 
@@ -22,8 +21,6 @@ def pedidos(body):
   
     print(pedido)
     
-    body = {
-        "pedido": pedido
-    }
+   
 
-    return body
+    return pedido

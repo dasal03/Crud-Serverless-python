@@ -30,10 +30,12 @@ class pedido_class():
         print(pedido)
         session.add(pedido)
         session.commit()
+        id_pedido = pedido.id
         session.close()
-        
-        return pedido
-
+        if id_pedido != "" and id_pedido != None:
+          return f"Operacion exitosa, id_pedido {id_pedido}"
+        else:
+          return "No se pudo insertar"
     except Exception as e:
         print(e)
         return e

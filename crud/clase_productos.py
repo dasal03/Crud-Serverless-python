@@ -12,8 +12,12 @@ class producto_class():
             self.producto = Producto(producto, valor)
             self.session.add(self.producto)
             self.session.commit()
+            id_producto = producto.id
             self.session.close()
-            return True
+            if id_producto != "" and id_producto != None:
+              return producto
+            else:
+              return "No se pudo insertar"
 
         except Exception as e:
             print(e)

@@ -25,8 +25,16 @@ export default class PedidoList extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
+      <section class="form-contact">
+        <header>
+          <span>
+            <i class="fa fa-paper-plane"></i>
+          </span>
+        </header>
+        <form class="contact" onSubmit={this.handleSubmit}>
+          <label for="nombre" class="nombre">
+            Nombre
+          </label>
           <input
             type="text"
             name="nombre"
@@ -35,6 +43,9 @@ export default class PedidoList extends React.Component {
             onChange={this.handleChange}
           />
 
+          <label for="id_producto" className="id_producto">
+            Producto
+          </label>
           <input
             type="text"
             name="id_producto"
@@ -43,6 +54,9 @@ export default class PedidoList extends React.Component {
             onChange={this.handleChange}
           />
 
+          <label for="cantidad" className="cantidad">
+            Cantidad
+          </label>
           <input
             type="text"
             name="cantidad"
@@ -51,6 +65,9 @@ export default class PedidoList extends React.Component {
             onChange={this.handleChange}
           />
 
+          <label for="valor_total" className="valor_total">
+            Valor total
+          </label>
           <input
             type="text"
             name="valor_total"
@@ -59,6 +76,9 @@ export default class PedidoList extends React.Component {
             onChange={this.handleChange}
           />
 
+          <label for="direccion" className="direccion">
+            Direccion
+          </label>
           <input
             type="text"
             name="direccion"
@@ -67,6 +87,9 @@ export default class PedidoList extends React.Component {
             onChange={this.handleChange}
           />
 
+          <label for="ciudad" className="ciudad">
+            Ciudad
+          </label>
           <input
             type="text"
             name="ciudad"
@@ -75,6 +98,9 @@ export default class PedidoList extends React.Component {
             onChange={this.handleChange}
           />
 
+          <label for="telefono" className="telefono">
+            Telefono
+          </label>
           <input
             type="text"
             name="telefono"
@@ -83,6 +109,9 @@ export default class PedidoList extends React.Component {
             onChange={this.handleChange}
           />
 
+          <label for="id_estado" className="id_estado">
+            Estado
+          </label>
           <input
             type="text"
             name="id_estado"
@@ -91,6 +120,9 @@ export default class PedidoList extends React.Component {
             onChange={this.handleChange}
           />
 
+          <label for="modulo" className="modulo">
+            Modulo
+          </label>
           <input
             type="text"
             name="modulo"
@@ -102,7 +134,7 @@ export default class PedidoList extends React.Component {
             Crear Pedido
           </button>
         </form>
-      </div>
+      </section>
     );
   }
 }

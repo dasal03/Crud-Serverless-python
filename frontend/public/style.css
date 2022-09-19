@@ -1,33 +1,79 @@
- * {
-   background-color: #3a3c7c;
-   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
- }
-
- body {
-   display: flex;
-   color: #fff;
-   align-items: center;
-   justify-content: center;
-   flex-direction: column;
- }
-
- input {
-  border: #fff 1px solid;
-  border-radius: 12px;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  -ms-border-radius: 12px;
-  -o-border-radius: 12px;
-  color: black;
-  background-color: #fff;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
- .crear {
-  border: #fff 1px solid;
-  border-radius: 12px;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  -ms-border-radius: 12px;
-  -o-border-radius: 12px;
-  color: #fff;
+body {
+  background-color: #a8e6cf;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-contact {
+  background-color: #FFF;
+  width: 420px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  box-shadow: 7px 13px 37px rgba(0, 0, 0, .8);
+  margin-top: 80px;
+}
+
+header {
+  width: 100%;
+  background-color: #ff165d;
+  overflow: hidden;
+  color: white;
+  position: relative;
+}
+
+header span {
+  font-size: 100px;
+  display: block;
+  text-align: center;
+  padding: 2.5rem;
+}
+
+.contact {
+  padding: .8rem;
+  overflow: hidden;
+  color: gray;
+  margin-bottom: 50px;
+}
+
+.contact label,
+.contact input {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.contact label {
+  font-weight: 700;
+}
+
+.contact input {
+  border: none;
+  border-bottom: 2px solid #ff165d;
+  margin-bottom: 10px;
+  font-size: 20px;
+  outline: none;
+  color: gray;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  background-color: #ff165d;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+  left: 30%;
+  margin-top: 60px;
 }

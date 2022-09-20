@@ -11,7 +11,11 @@ body {
 
 .form-contact {
   background-color: #FFF;
+<<<<<<< HEAD
   width: 450px;
+=======
+  width: 420px;
+>>>>>>> a880d5c7ed346ebc94176b0b425b8f5482b81d03
   position: absolute;
   top: 50%;
   left: 50%;
@@ -21,12 +25,16 @@ body {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   box-shadow: 7px 13px 37px rgba(0, 0, 0, .8);
+<<<<<<< HEAD
   margin-top: 2px;
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
+=======
+  margin-top: 80px;
+>>>>>>> a880d5c7ed346ebc94176b0b425b8f5482b81d03
 }
 
 header {
@@ -35,11 +43,14 @@ header {
   overflow: hidden;
   color: white;
   position: relative;
+<<<<<<< HEAD
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
+=======
+>>>>>>> a880d5c7ed346ebc94176b0b425b8f5482b81d03
 }
 
 header span {
@@ -57,8 +68,12 @@ header span {
 }
 
 .contact label,
+<<<<<<< HEAD
 .contact input,
 .contact select {
+=======
+.contact input {
+>>>>>>> a880d5c7ed346ebc94176b0b425b8f5482b81d03
   display: block;
   width: 100%;
   margin-bottom: 8px;
@@ -72,6 +87,7 @@ header span {
   border: none;
   border-bottom: 2px solid #ff165d;
   margin-bottom: 10px;
+<<<<<<< HEAD
   font-size: 18px;
   outline: none;
   color: gray;
@@ -82,6 +98,9 @@ header span {
   border-bottom: 2px solid #ff165d;
   margin-bottom: 10px;
   font-size: 18px;
+=======
+  font-size: 20px;
+>>>>>>> a880d5c7ed346ebc94176b0b425b8f5482b81d03
   outline: none;
   color: gray;
 }
@@ -89,11 +108,15 @@ header span {
 button {
   padding: 10px;
   border: none;
+<<<<<<< HEAD
   border-radius: 4px;
+=======
+>>>>>>> a880d5c7ed346ebc94176b0b425b8f5482b81d03
   background-color: #ff165d;
   color: white;
   font-size: 20px;
   cursor: pointer;
+<<<<<<< HEAD
   position: absolute;
   left: 32%;
   bottom: 2%;
@@ -101,4 +124,9 @@ button {
 
 .idestado, .modulo {
   display: none !important;
+=======
+  position: relative;
+  left: 30%;
+  margin-top: 60px;
+>>>>>>> a880d5c7ed346ebc94176b0b425b8f5482b81d03
 }

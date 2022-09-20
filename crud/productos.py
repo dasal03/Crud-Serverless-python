@@ -1,4 +1,3 @@
-import json
 from clase_productos import producto_class
 
 

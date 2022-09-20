@@ -207,7 +207,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverapp/dev/1663344377315-2022-09-16T16:06:17.315Z/serverapp.zip"
+          "S3Key": "serverless/serverapp/dev/1663601281319-2022-09-19T15:28:01.319Z/serverapp.zip"
         },
         "Handler": "s_productos.handler",
         "Runtime": "python3.9",
@@ -228,14 +228,14 @@
         "ProductosLogGroup"
       ]
     },
-    "ProductosLambdaVersionH6lhWtxobzsgQ4EIGkyKzoMRZCX8K5Kh0GPFCqYow": {
+    "ProductosLambdaVersion1BX8BrTfytFX24iWqCUl7J8ugrjWhUnlo8XocLAMwc": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ProductosLambdaFunction"
         },
-        "CodeSha256": "UVcjCXN5/Y6hsE5eg/Rpu5izBAwTTp/B3f3OZTxZfcA="
+        "CodeSha256": "1DimgQtGyIgQyAw3mzP9IH0OQizPyYtA5R4rCSuwTWg="
       }
     },
     "HttpApi": {
@@ -432,7 +432,7 @@
     "ProductosLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ProductosLambdaVersionH6lhWtxobzsgQ4EIGkyKzoMRZCX8K5Kh0GPFCqYow"
+        "Ref": "ProductosLambdaVersion1BX8BrTfytFX24iWqCUl7J8ugrjWhUnlo8XocLAMwc"
       },
       "Export": {
         "Name": "sls-serverapp-dev-ProductosLambdaFunctionQualifiedArn"

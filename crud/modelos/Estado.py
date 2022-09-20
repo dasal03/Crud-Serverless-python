@@ -9,7 +9,7 @@ class Estado(Base):
     id = Column(Integer, primary_key=True)
     estado = Column(String)
 
-    def __init__(self, estado):
+    def __init__(self, estado) -> None:
         self.estado = estado
 
     def __repr__(self) -> str:

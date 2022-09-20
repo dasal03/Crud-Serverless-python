@@ -1,4 +1,3 @@
-import json
 from clase_estado import estado_class
 
 
@@ -8,7 +7,8 @@ def estado(body):
 
     stat = estado_class()
 
-    stat.crear_estado(estado)
-    
+    agregar = stat.crear_estado(estado)
+    print(agregar)
 
-    return stat
+
+    return agregar
